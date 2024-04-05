@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "linux-playerctl",
+	"version": "${version}",
+	"name": "Minecraft playerctl",
+	"description": "Adds support for controlling MPRIS in Minecraft.",
+	"authors": [
+		"programmerlexi (truemaker)"
+	],
+	"contact": {
+		"sources": "https://github.com/truemaker/minecraft-playerctl",
+    "issues": "https://github.com/truemaker/minecraft-playerctl/issues"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/linux-playerctl/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.programmerlexi.pl.LinuxPlayerctl"
+		],
+		"client": [
+			"com.programmerlexi.pl.LinuxPlayerctlClient"
+		]
+	},
+	"mixins": [
+		"linux-playerctl.mixins.json",
+		{
+			"config": "linux-playerctl.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
