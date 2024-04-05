@@ -30,11 +30,11 @@ public class LinuxPlayerctlClient implements ClientModInitializer {
   @Override
   public void onInitializeClient() {
     KeyBinding prev = KeyBindingHelper.registerKeyBinding(
-        new KeyBinding("key.playerctl.prev", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_J, "key.category.playerctl"));
+        new KeyBinding("key.playerctl.prev", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_H, "key.category.playerctl"));
     KeyBinding next = KeyBindingHelper.registerKeyBinding(
-        new KeyBinding("key.playerctl.next", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_I, "key.category.playerctl"));
+        new KeyBinding("key.playerctl.next", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_K, "key.category.playerctl"));
     KeyBinding playPause = KeyBindingHelper
-        .registerKeyBinding(new KeyBinding("key.playerctl.play", GLFW.GLFW_KEY_L, "key.category.playerctl"));
+        .registerKeyBinding(new KeyBinding("key.playerctl.play", GLFW.GLFW_KEY_J, "key.category.playerctl"));
     ClientTickEvents.END_CLIENT_TICK.register(client -> {
       while (prev.wasPressed()) {
         client.player.sendMessage(Text.literal("Playing previous song"), false);
